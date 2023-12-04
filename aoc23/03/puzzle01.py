@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 def main() -> None:
-    path = Path.cwd().joinpath('input/sample.txt')
+    path = Path.cwd().joinpath('input/input.txt')
 
     with open(path, 'r') as handle:
         grid = [
