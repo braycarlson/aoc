@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import deque
 from pathlib import Path
 
 
@@ -25,18 +26,21 @@ def main() -> None:
         for i, line in enumerate(handle, 1):
             game[i] = []
 
-            line = line.strip().translate(table).split(' ')
+            line = deque(
+                line
+                .strip()
+                .translate(table)
+                .split(' ')
+            )
 
-            line = reversed(line)
-            line = list(line)
-            line.pop()
-            line.pop()
+            line.popleft()
+            line.popleft()
 
             for j in range(0, len(line), 2):
-                color = line[j]
-                amount = line[j + 1]
-
+                amount = line[j]
                 amount = int(amount)
+
+                color = line[j + 1]
                 limit = CONFIGURATION[color]
 
                 game[i].append(amount <= limit)
