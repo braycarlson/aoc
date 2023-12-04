@@ -31,11 +31,16 @@ def main() -> None:
 
             winning = right.intersection(left)
 
-            if winning:
-                if len(winning) == 1:
-                    total = total + 1
-                else:
-                    total = total + 2 ** (len(winning) - 1)
+            if not winning:
+                continue
+
+            length = len(winning)
+
+            total = (
+                total + 1
+                if length == 1
+                else total + 2 ** (length - 1)
+            )
 
     print(total)
 

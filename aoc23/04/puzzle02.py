@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from collections import deque
 from pathlib import Path
 
 
@@ -42,17 +41,11 @@ def main() -> None:
     }
 
     keys = master.keys()
-    unique = deque(keys)
 
-    while unique:
-        card = unique.popleft()
-        copies = count[card]
+    for key in keys:
+        copies = count[key]
 
-        for won in master[card]:
-            if won not in master:
-                count[won] = 0
-                unique.append(won)
-
+        for won in master[key]:
             count[won] = count[won] + copies
 
     total = count.values()
