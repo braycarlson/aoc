@@ -16,7 +16,7 @@ def main() -> None:
             if x.isdigit()
         ]
 
-        middle = (len(information) // 2)
+        middle = len(information) // 2
 
         time, distance = (
             int(''.join(information[:middle])),
