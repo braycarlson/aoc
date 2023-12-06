@@ -17,12 +17,12 @@ def transform(
             source_end = source_start + length
 
             if source_start <= interval_start < source_end:
+                minimum = min(interval_end, source_end) - interval_start
+
                 transform_start = destination_start + (interval_start - source_start)
-                transform_end = destination_start + length
+                transform_end = transform_start + minimum
 
-                minimum = min(transform_end, interval_end)
-                pair = (transform_start, minimum)
-
+                pair = (transform_start, transform_end)
                 transformed.append(pair)
 
                 if interval_end > source_end:
