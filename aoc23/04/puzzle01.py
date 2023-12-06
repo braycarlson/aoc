@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def main() -> None:
-    path = Path.cwd().joinpath('input/input.txt')
+    path = Path.cwd().joinpath('input/sample.txt')
 
     total = 0
 
