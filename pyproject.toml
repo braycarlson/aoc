@@ -77,14 +77,24 @@ exclude = [
     ".ruff_cache",
     ".svn",
     ".tox",
-    ".venv",
     "__pypackages__",
     "_build",
     "buck-out",
     "build",
     "dist",
     "node_modules",
+    ".venv",
+    ".venv_win",
+    ".venv_windows",
+    ".venv_unix",
+    ".venv_linux",
+    ".venv_mac",
     "venv",
+    "venv_win",
+    "venv_windows",
+    "venv_unix",
+    "venv_linux",
+    "venv_mac"
 ]
 
 per-file-ignores = {}
